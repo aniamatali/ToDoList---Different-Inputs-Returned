@@ -4,37 +4,21 @@ namespace ToDoList.Models
 {
   public class Task
   {
-    private string _description;
-    private string _name;
     private string _make;
+    private string _model;
+    private int _price;
 
     private static List<string> _instances = new List<string> {};
 
 
     //this is the constructor
-    public Task (string description, string name, string make)
+    public Task (string make, string model, int price)
     {
-      _description = description;
-      _name = name;
       _make = make;
+      _model = model;
+      _price = price;
     }
 
-    public string GetDescription()
-    {
-      return _description;
-    }
-    public void SetDescription(string newDescription)
-    {
-      _description = newDescription;
-    }
-    public string GetName()
-    {
-      return _name;
-    }
-    public void SetName(string newName)
-    {
-      _name = newName;
-    }
     public string GetMake()
     {
       return _make;
@@ -43,6 +27,22 @@ namespace ToDoList.Models
     {
       _make = newMake;
     }
+    public string GetModel()
+    {
+      return _model;
+    }
+    public void SetModel(string newModel)
+    {
+      _model = newModel;
+    }
+    public int GetPrice()
+    {
+      return _price;
+    }
+    public void GetPrice(int newPrice)
+    {
+      _price = newPrice;
+    }
 
     public static List<string> GetAll()
     {
@@ -50,7 +50,7 @@ namespace ToDoList.Models
     }
     public void Save()
     {
-      _instances.Add((_description + " " + _name + " " + _make));
+      _instances.Add((_make + " " + _model + " " + _price));
     }
     public static void ClearAll()
     {

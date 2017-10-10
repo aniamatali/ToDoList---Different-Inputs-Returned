@@ -24,7 +24,7 @@ namespace ToDoList.Controllers
         [HttpPost("/task/create")]
         public ActionResult CreateTask()
         {
-          Task newTask = new Task (Request.Form["new-task"], Request.Form["newTask2"], Request.Form["newtask3"]);
+          Task newTask = new Task (Request.Form["make"], Request.Form["model"], int.Parse(Request.Form["price"]));
           newTask.Save();
           return View(newTask);
         }
